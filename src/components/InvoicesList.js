@@ -9,6 +9,8 @@ const InvoicesList = () => {
 	const { items: invoices } = useSelector(state => state.invoices);
 	const dispatch = useDispatch();
 
+	const handleInvoiceDelete = () => dispatch(deleteItem(invoice.id));
+
 	return (
 		<div className="container mt-5">
 			<h2 className="mb-4">Invoices List</h2>
@@ -35,10 +37,7 @@ const InvoicesList = () => {
 								</Button>
 							</Link>
 
-							<Button
-								variant="outline-danger"
-								onClick={() => dispatch(deleteItem(invoice.id))}
-							>
+							<Button variant="outline-danger" onClick={handleInvoiceDelete}>
 								<FaTrash />
 								{'  '} Delete
 							</Button>
