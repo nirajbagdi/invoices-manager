@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import invoicesReducer from './reducers/invoicesReducer';
+import invoicesReducer from 'reducers/invoicesReducer';
 
 export default configureStore({
 	reducer: {

@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, Button, Table, Modal } from 'react-bootstrap';
 import { BiSave, BiCloudDownload } from 'react-icons/bi';
 
-import { saveItem, setActiveInvoice } from '../actions/invoicesActions';
-import { generateInvoice } from '../utils';
+import { saveItem, setActiveInvoice } from 'actions/invoicesActions';
+import { generateInvoice } from 'utils';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 

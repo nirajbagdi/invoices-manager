@@ -3,12 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { v4 as uuid } from 'uuid';
-import { Form, Row, Col, Button, Card } from 'react-bootstrap';
+import { Form, Row, Col, Button, Card, InputGroup } from 'react-bootstrap';
 
 import InvoiceItem from './InvoiceItem';
-import InputGroup from 'react-bootstrap/InputGroup';
-
-import { setActiveInvoice } from '../actions/invoicesActions';
+import { setActiveInvoice } from 'actions/invoicesActions';
 
 const initialItem = {
 	id: uuid(),

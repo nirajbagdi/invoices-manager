@@ -1,12 +1,12 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 
-import Home from './components/Home';
-import InvoiceForm from './components/InvoiceForm';
-import InvoiceModal from './components/InvoiceModal';
+import Home from 'components/Home';
+import InvoiceForm from 'components/InvoiceForm/InvoiceForm';
+import InvoiceModal from 'components/InvoiceModal/InvoiceModal';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/App.css';
+import 'styles/App.css';
 
 const router = createBrowserRouter([
 	{ path: '/', element: <Home /> },

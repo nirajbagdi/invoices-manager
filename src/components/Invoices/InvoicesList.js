@@ -3,13 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ListGroup, Button } from 'react-bootstrap';
 import { FaPencilAlt, FaTrash } from 'react-icons/fa';
 
-import { setActiveInvoice, deleteItem } from '../actions/invoicesActions';
+import { setActiveInvoice, deleteItem } from 'actions/invoicesActions';
 
 const InvoicesList = () => {
 	const { items: invoices } = useSelector(state => state.invoices);
 	const dispatch = useDispatch();
-
-	const handleInvoiceDelete = () => dispatch(deleteItem(invoice.id));
 
 	return (
 		<div className="container mt-5">
@@ -37,7 +35,10 @@ const InvoicesList = () => {
 								</Button>
 							</Link>
 
-							<Button variant="outline-danger" onClick={handleInvoiceDelete}>
+							<Button
+								variant="outline-danger"
+								onClick={() => dispatch(deleteItem(invoice.id))}
+							>
 								<FaTrash />
 								{'  '} Delete
 							</Button>

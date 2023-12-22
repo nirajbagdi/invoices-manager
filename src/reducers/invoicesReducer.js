@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { saveItem, deleteItem, setActiveInvoice } from '../actions/invoicesActions';
-import DUMMY_INVOICES from '../data/invoices.json';
+import { saveItem, deleteItem, setActiveInvoice } from 'actions/invoicesActions';
+import DUMMY_INVOICES from 'data/invoices.json';
 
 const initialState = {
 	items: DUMMY_INVOICES.invoices,

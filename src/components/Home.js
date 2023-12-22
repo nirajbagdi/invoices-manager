@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { BsPlusSquareFill } from 'react-icons/bs';
 
-import InvoicesList from './InvoicesList';
+import InvoicesList from 'components/Invoices/InvoicesList';
 
 const Home = () => (
 	<>
