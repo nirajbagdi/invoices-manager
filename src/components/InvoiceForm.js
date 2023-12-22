@@ -6,10 +6,9 @@ import { v4 as uuid } from 'uuid';
 import { Form, Row, Col, Button, Card } from 'react-bootstrap';
 
 import InvoiceItem from './InvoiceItem';
-import InvoiceModal from './InvoiceModal';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-import { saveItem, setActiveInvoice } from '../store/invoicesReducer';
+import { setActiveInvoice } from '../store/invoicesReducer';
 
 const initialItem = {
 	id: uuid(),
@@ -43,10 +42,8 @@ const initialInvoiceState = {
 
 const InvoiceForm = () => {
 	const [invoice, setInvoice] = useState(initialInvoiceState);
-	const [showModal, setShowModal] = useState(false);
 
 	const invoices = useSelector(state => state.invoices.items);
-	const activeInvoice = useSelector(state => state.invoices.activeInvoice);
 	const dispatch = useDispatch();
 
 	const { invoiceSlug } = useParams();
