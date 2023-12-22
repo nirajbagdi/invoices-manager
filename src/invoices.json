@@ -1,0 +1,78 @@
+{
+	"invoices": [
+		{
+			"id": "834o892325",
+			"items": [
+				{
+					"id": "522ad046-b34c-4e67-b379-017530323f44",
+					"name": "Books",
+					"description": "Harry Potter (Premium Collection)",
+					"price": 38.5,
+					"quantity": 5
+				},
+				{
+					"id": "7c7f5f12-e57d-46b1-bd23-6d52144b8b1e",
+					"name": "Video Games",
+					"description": "GTA V + RDR2",
+					"price": 120,
+					"quantity": 2
+				}
+			],
+			"isOpen": false,
+			"currency": "$",
+			"currentDate": "",
+			"invoiceNumber": 146,
+			"dateOfIssue": "2024-02-23",
+			"billTo": "John Doe",
+			"billToEmail": "john.doe@example.com",
+			"billToAddress": "New York, USA",
+			"billFrom": "Billy Singh",
+			"billFromEmail": "billy.singh@example.com",
+			"billFromAddress": "Brampton, CA",
+			"notes": "Probably just a reminder for myself to shop less :)",
+			"total": 480.29125,
+			"subTotal": 432.5,
+			"taxRate": 23.89,
+			"taxAmount": 103.32425,
+			"discountRate": 12.84,
+			"discountAmount": 55.532999999999994
+		},
+		{
+			"id": "8492332njd9f8",
+			"items": [
+				{
+					"id": "932uwridkj23h98r",
+					"name": "College",
+					"description": "Total University Fees + Tution",
+					"price": 500,
+					"quantity": 1
+				},
+				{
+					"id": "38on2uo29",
+					"name": "Skateboard",
+					"description": "Twin Tip Londboard Skateboard",
+					"price": 85,
+					"quantity": 2
+				}
+			],
+			"isOpen": false,
+			"currency": "$",
+			"currentDate": "",
+			"invoiceNumber": 240,
+			"dateOfIssue": "2024-05-15",
+			"billTo": "Michael Dave",
+			"billToEmail": "michael.dave@example.com",
+			"billToAddress": "Phiplipines",
+			"billFrom": "Trevor Phiplis",
+			"billFromEmail": "trevor.philips@example.com",
+			"billFromAddress": "Atlanta, GA",
+			"notes": "Any Bullshit :)",
+			"total": 652.379,
+			"subTotal": 670.0,
+			"taxRate": 15.67,
+			"taxAmount": 104.99,
+			"discountRate": 18.32,
+			"discountAmount": 122.74
+		}
+	]
+}
