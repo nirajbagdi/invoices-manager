@@ -8,7 +8,7 @@ import { Form, Row, Col, Button, Card } from 'react-bootstrap';
 import InvoiceItem from './InvoiceItem';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-import { setActiveInvoice } from '../store/invoicesReducer';
+import { setActiveInvoice } from '../actions/invoicesActions';
 
 const initialItem = {
 	id: uuid(),
@@ -125,8 +125,6 @@ const InvoiceForm = () => {
 
 	const handleFormSubmit = event => {
 		event.preventDefault();
-
-		console.log('hello');
 
 		dispatch(setActiveInvoice(invoice));
 		handleCalculateTotal();

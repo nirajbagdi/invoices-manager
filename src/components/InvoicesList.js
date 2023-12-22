@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { ListGroup, Button } from 'react-bootstrap';
 import { FaPencilAlt, FaTrash } from 'react-icons/fa';
 
-import { setActiveInvoice, deleteItem } from '../store/invoicesReducer';
+import { setActiveInvoice, deleteItem } from '../actions/invoicesActions';
 
 const InvoicesList = props => {
 	const dispatch = useDispatch();

@@ -1,18 +1,17 @@
 import { Routes, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { Container } from 'react-bootstrap';
 
-import Container from 'react-bootstrap/Container';
+import { saveItem, setActiveInvoice } from './actions/invoicesActions';
+import Home from './components/Home';
 import InvoiceForm from './components/InvoiceForm';
 import InvoiceModal from './components/InvoiceModal';
-import Home from './components/Home';
-import { saveItem, setActiveInvoice } from './store/invoicesReducer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
 
 const App = () => {
-	const invoices = useSelector(state => state.invoices.items);
-	const activeInvoice = useSelector(state => state.invoices.activeInvoice);
+	const { items: invoices, activeInvoice } = useSelector(state => state.invoices);
 	const dispatch = useDispatch();
 
 	return (
