@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Container } from 'react-bootstrap';
 
@@ -10,8 +10,14 @@ import InvoiceModal from './components/InvoiceModal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
 
+const router = createBrowserRouter([
+	{ path: '/', element: <Home /> },
+	{ path: '/new', element: <InvoiceForm /> },
+	{ path: '/edit/:invoiceSlug', element: <InvoiceForm /> },
+]);
+
 const App = () => {
-	const { items: invoices, activeInvoice } = useSelector(state => state.invoices);
+	const { activeInvoice } = useSelector(state => state.invoices);
 	const dispatch = useDispatch();
 
 	return (
@@ -27,11 +33,7 @@ const App = () => {
 					}}
 				/>
 
-				<Routes>
-					<Route path="/" element={<Home invoices={invoices} />} />
-					<Route path="/new" element={<InvoiceForm />} />
-					<Route path="/edit/:invoiceSlug" element={<InvoiceForm />} />
-				</Routes>
+				<RouterProvider router={router} />
 			</Container>
 		</div>
 	);

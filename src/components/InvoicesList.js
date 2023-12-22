@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ListGroup, Button } from 'react-bootstrap';
 import { FaPencilAlt, FaTrash } from 'react-icons/fa';
 
 import { setActiveInvoice, deleteItem } from '../actions/invoicesActions';
 
-const InvoicesList = props => {
+const InvoicesList = () => {
+	const { items: invoices } = useSelector(state => state.invoices);
 	const dispatch = useDispatch();
 
 	return (
@@ -13,7 +14,7 @@ const InvoicesList = props => {
 			<h2 className="mb-4">Invoices List</h2>
 
 			<ListGroup>
-				{props.invoices.map(invoice => (
+				{invoices.map(invoice => (
 					<ListGroup.Item
 						key={invoice.id}
 						className="d-flex justify-content-between align-items-center invoice-item"
