@@ -30,8 +30,7 @@ const InvoicesList = () => {
 						<div className="ms-2">
 							<Link to={`/edit/${invoice.id}`}>
 								<Button variant="outline-primary" className="me-2">
-									<FaPencilAlt /> {'  '}
-									Edit
+									<FaPencilAlt />
 								</Button>
 							</Link>
 
@@ -40,7 +39,6 @@ const InvoicesList = () => {
 								onClick={() => dispatch(deleteItem(invoice.id))}
 							>
 								<FaTrash />
-								{'  '} Delete
 							</Button>
 						</div>
 					</ListGroup.Item>
