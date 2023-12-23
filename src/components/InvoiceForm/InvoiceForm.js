@@ -6,7 +6,7 @@ import { v4 as uuid } from 'uuid';
 import { Form, Row, Col, Button, Card, InputGroup } from 'react-bootstrap';
 
 import InvoiceItem from './InvoiceItem';
-import { setActiveInvoice } from 'actions/invoicesActions';
+import { copyItem, setActiveInvoice } from 'actions/invoicesActions';
 
 const initialItem = {
 	id: uuid(),
@@ -333,7 +333,17 @@ const InvoiceForm = () => {
 							Review Invoice
 						</Button>
 
-						<Form.Group className="mb-3">
+						{invoiceSlug && (
+							<Button
+								variant="outline-secondary"
+								className="d-block w-100 mt-2"
+								onClick={() => dispatch(copyItem(invoice))}
+							>
+								Copy to a New Invoice
+							</Button>
+						)}
+
+						<Form.Group className="my-3">
 							<Form.Label className="fw-bold">Currency:</Form.Label>
 
 							<Form.Select

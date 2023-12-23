@@ -1,5 +1,6 @@
+import { v4 as uuid } from 'uuid';
 import { createReducer } from '@reduxjs/toolkit';
-import { saveItem, deleteItem, setActiveInvoice } from 'actions/invoicesActions';
+import { saveItem, deleteItem, copyItem, setActiveInvoice } from 'actions/invoicesActions';
 import DUMMY_INVOICES from 'data/invoices.json';
 
 const initialState = {
@@ -21,6 +22,11 @@ const invoicesReducer = createReducer(initialState, builder => {
 		.addCase(deleteItem, (state, action) => {
 			const filteredItems = state.items.filter(item => item.id !== action.payload);
 			state.items = filteredItems;
+		})
+
+		.addCase(copyItem, (state, action) => {
+			const copiedInvoice = { ...action.payload, id: uuid() };
+			state.items.push(copiedInvoice);
 		})
 
 		.addCase(setActiveInvoice, (state, action) => {
