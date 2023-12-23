@@ -23,7 +23,8 @@ const InvoicesList = () => {
 							style={{ cursor: 'pointer', flex: '1' }}
 							onClick={() => dispatch(setActiveInvoice(invoice))}
 						>
-							<strong>Invoice #{invoice.invoiceNumber}</strong> - {invoice.billTo} - $
+							<strong>Invoice #{invoice.invoiceNumber}</strong> - {invoice.billTo} -{' '}
+							{invoice.currency.split('_')[0]}
 							{invoice.total.toFixed(2)}
 						</span>
 

@@ -67,6 +67,8 @@ const InvoiceForm = () => {
 			...invoiceObj,
 			items: invoiceObj.items.filter(item => item.id !== itemID),
 		}));
+
+		handleCalculateTotal();
 	};
 
 	const handleAddEvent = () => {
@@ -116,8 +118,6 @@ const InvoiceForm = () => {
 			...invoiceObj,
 			[event.target.name]: +event.target.value || event.target.value,
 		}));
-
-		handleCalculateTotal();
 	};
 
 	const handleCurrencyChange = currency => {
@@ -280,7 +280,7 @@ const InvoiceForm = () => {
 
 							<InvoiceItem
 								items={invoice.items}
-								currency={invoice.currency}
+								currency={invoice.currency.split('_')[0]}
 								onRowAdd={handleAddEvent}
 								onRowDel={handleRowDel}
 								onItemizedItemEdit={handleItemizedItemEdit}
@@ -292,7 +292,7 @@ const InvoiceForm = () => {
 										<span className="fw-bold">Subtotal:</span>
 
 										<span>
-											{invoice.currency}
+											{invoice.currency.split('_')[0]}
 											{invoice.subTotal.toFixed(2)}
 										</span>
 									</div>
@@ -316,7 +316,7 @@ const InvoiceForm = () => {
 											<span className="small ">
 												({invoice.taxRate || 0}%)
 											</span>
-											{invoice.currency}
+											{invoice.currency.split('_')[0]}
 											{(invoice.taxAmount || 0).toFixed(2)}
 										</span>
 									</div>
@@ -330,7 +330,7 @@ const InvoiceForm = () => {
 										<span className="fw-bold">Total:</span>
 
 										<span className="fw-bold">
-											{invoice.currency}
+											{invoice.currency.split('_')[0]}
 											{invoice.total?.toFixed(2) || 0}
 										</span>
 									</div>
@@ -373,18 +373,19 @@ const InvoiceForm = () => {
 								<Form.Label className="fw-bold">Currency:</Form.Label>
 
 								<Form.Select
+									value={invoice.currency}
 									onChange={event => handleCurrencyChange(event.target.value)}
 									className="btn btn-light my-1"
 									aria-label="Change Currency"
 								>
-									<option value="$">USD (United States Dollar)</option>
-									<option value="£">GBP (British Pound Sterling)</option>
-									<option value="¥">JPY (Japanese Yen)</option>
-									<option value="$">CAD (Canadian Dollar)</option>
-									<option value="$">AUD (Australian Dollar)</option>
-									<option value="$">SGD (Signapore Dollar)</option>
-									<option value="¥">CNY (Chinese Renminbi)</option>
-									<option value="₿">BTC (Bitcoin)</option>
+									<option value="$_USD">USD (United States Dollar)</option>
+									<option value="£_GBP">GBP (British Pound Sterling)</option>
+									<option value="¥_JPY">JPY (Japanese Yen)</option>
+									<option value="$_CAD">CAD (Canadian Dollar)</option>
+									<option value="$_AUD">AUD (Australian Dollar)</option>
+									<option value="$_SGD">SGD (Signapore Dollar)</option>
+									<option value="¥_CNY">CNY (Chinese Renminbi)</option>
+									<option value="₿_BTC">BTC (Bitcoin)</option>
 								</Form.Select>
 							</Form.Group>
 
