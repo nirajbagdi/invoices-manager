@@ -25,7 +25,12 @@ const invoicesReducer = createReducer(initialState, builder => {
 		})
 
 		.addCase(copyItem, (state, action) => {
-			const copiedInvoice = { ...action.payload, id: uuid() };
+			const copiedInvoice = {
+				...action.payload,
+				id: uuid(),
+				invoiceNumber: action.payload.invoiceNumber + 1,
+			};
+
 			state.items.push(copiedInvoice);
 		})
 
