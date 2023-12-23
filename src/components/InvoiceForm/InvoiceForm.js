@@ -389,8 +389,10 @@ const InvoiceForm = () => {
 									className="btn btn-light my-1"
 									aria-label="Change Currency"
 								>
-									{currencyOptions.map(({ label, value }) => (
-										<option value={value}>{label}</option>
+									{currencyOptions.map(({ label, value }, idx) => (
+										<option key={idx} value={value}>
+											{label}
+										</option>
 									))}
 								</Form.Select>
 							</Form.Group>
