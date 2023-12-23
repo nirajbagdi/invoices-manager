@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import { v4 as uuid } from 'uuid';
 import { Form, Row, Col, Button, Card, InputGroup } from 'react-bootstrap';
+import { BiArrowToLeft } from 'react-icons/bi';
 
 import InvoiceItem from './InvoiceItem';
 import CopyModal from 'components/CopyModal/CopyModal';
@@ -142,6 +143,13 @@ const InvoiceForm = () => {
 				invoiceId={invoices.at(-1).id}
 				onClose={() => setIsCopied(false)}
 			/>
+
+			<Link to="/">
+				<Button variant="outline" className="mt-3 mb-2 border-0">
+					<BiArrowToLeft className="me-2" />
+					Back to Invoices
+				</Button>
+			</Link>
 
 			<Form onSubmit={handleFormSubmit}>
 				<Row>
