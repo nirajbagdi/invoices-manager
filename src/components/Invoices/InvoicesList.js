@@ -10,7 +10,7 @@ const InvoicesList = () => {
 	const dispatch = useDispatch();
 
 	return (
-		<div className="container mt-5">
+		<div className="container mt-5" style={{ maxWidth: '800px' }}>
 			<h2 className="mb-4">Invoices List</h2>
 
 			<ListGroup>
