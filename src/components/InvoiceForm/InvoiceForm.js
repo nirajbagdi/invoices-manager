@@ -40,6 +40,17 @@ const initialInvoiceState = {
 	discountAmount: 0,
 };
 
+const currencyOptions = [
+	{ value: '$_USD', label: 'USD (United States Dollar)' },
+	{ value: '£_GBP', label: 'GBP (British Pound Sterling)' },
+	{ value: '¥_JPY', label: 'JPY (Japanese Yen)' },
+	{ value: '$_CAD', label: 'CAD (Canadian Dollar)' },
+	{ value: '$_AUD', label: 'AUD (Australian Dollar)' },
+	{ value: '$_SGD', label: 'SGD (Singapore Dollar)' },
+	{ value: '¥_CNY', label: 'CNY (Chinese Renminbi)' },
+	{ value: '₿_BTC', label: 'BTC (Bitcoin)' },
+];
+
 const InvoiceForm = () => {
 	const [invoice, setInvoice] = useState(initialInvoiceState);
 	const [isCopied, setIsCopied] = useState(false);
@@ -378,14 +389,9 @@ const InvoiceForm = () => {
 									className="btn btn-light my-1"
 									aria-label="Change Currency"
 								>
-									<option value="$_USD">USD (United States Dollar)</option>
-									<option value="£_GBP">GBP (British Pound Sterling)</option>
-									<option value="¥_JPY">JPY (Japanese Yen)</option>
-									<option value="$_CAD">CAD (Canadian Dollar)</option>
-									<option value="$_AUD">AUD (Australian Dollar)</option>
-									<option value="$_SGD">SGD (Signapore Dollar)</option>
-									<option value="¥_CNY">CNY (Chinese Renminbi)</option>
-									<option value="₿_BTC">BTC (Bitcoin)</option>
+									{currencyOptions.map(({ label, value }) => (
+										<option value={value}>{label}</option>
+									))}
 								</Form.Select>
 							</Form.Group>
 
