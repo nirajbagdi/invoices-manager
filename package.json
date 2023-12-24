@@ -1,5 +1,5 @@
 {
-	"name": "invoice-generator",
+	"name": "invoices-manager",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {

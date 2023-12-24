@@ -7,7 +7,7 @@ This project is a simple invoice management system developed using **React** and
 
 ## Live Demo
 
-A live demo of the application is hosted at [https://invoices-generator-v2.netlify.app](https://invoices-generator-v2.netlify.app)
+A live demo of the application is hosted at [https://invoices-manager-v2.netlify.app](https://invoices-manager-v2.netlify.app)
 
 ## Features
 
@@ -30,13 +30,13 @@ To get started with the project, follow these steps:
 1.  Clone the repository:
 
     ```sh
-    git clone https://github.com/nirajbagdi/invoice-generator.git
+    git clone https://github.com/nirajbagdi/invoices-manager.git
     ```
 
 2.  Navigate to the project directory:
 
     ```sh
-    cd invoice-generator
+    cd invoices-manager
     ```
 
 3.  Install the dependencies:
