@@ -45,7 +45,8 @@ const InvoiceModal = () => {
 
 							<h5 className="fw-bold text-secondary">
 								{' '}
-								{activeInvoice.currency} {activeInvoice.total.toFixed(2)}
+								{activeInvoice.currency.split('_')[0]}{' '}
+								{activeInvoice.total.toFixed(2)}
 							</h5>
 						</div>
 					</div>
@@ -92,11 +93,13 @@ const InvoiceModal = () => {
 										</td>
 
 										<td className="text-end" style={{ width: '100px' }}>
-											{activeInvoice.currency} {item.price.toFixed(2)}
+											{activeInvoice.currency.split('_')[0]}{' '}
+											{item.price.toFixed(2)}
 										</td>
 
 										<td className="text-end" style={{ width: '100px' }}>
-											{activeInvoice.currency} {item.price * item.quantity}
+											{activeInvoice.currency.split('_')[0]}{' '}
+											{item.price * item.quantity}
 										</td>
 									</tr>
 								))}
@@ -119,7 +122,8 @@ const InvoiceModal = () => {
 									</td>
 
 									<td className="text-end" style={{ width: '100px' }}>
-										{activeInvoice.currency} {activeInvoice.subTotal.toFixed(2)}
+										{activeInvoice.currency.split('_')[0]}{' '}
+										{activeInvoice.subTotal.toFixed(2)}
 									</td>
 								</tr>
 
@@ -132,7 +136,7 @@ const InvoiceModal = () => {
 										</td>
 
 										<td className="text-end" style={{ width: '100px' }}>
-											{activeInvoice.currency}{' '}
+											{activeInvoice.currency.split('_')[0]}{' '}
 											{activeInvoice.taxAmount.toFixed(2)}
 										</td>
 									</tr>
@@ -146,7 +150,7 @@ const InvoiceModal = () => {
 										</td>
 
 										<td className="text-end" style={{ width: '100px' }}>
-											{activeInvoice.currency}{' '}
+											{activeInvoice.currency.split('_')[0]}{' '}
 											{activeInvoice.discountAmount.toFixed(2)}
 										</td>
 									</tr>
@@ -159,7 +163,8 @@ const InvoiceModal = () => {
 									</td>
 
 									<td className="text-end" style={{ width: '100px' }}>
-										{activeInvoice.currency} {activeInvoice.total.toFixed(2)}
+										{activeInvoice.currency.split('_')[0]}{' '}
+										{activeInvoice.total.toFixed(2)}
 									</td>
 								</tr>
 							</tbody>
