@@ -129,6 +129,8 @@ const InvoiceForm = () => {
 			...invoiceObj,
 			[event.target.name]: +event.target.value || event.target.value,
 		}));
+
+		handleCalculateTotal();
 	};
 
 	const handleCurrencyChange = currency => {
