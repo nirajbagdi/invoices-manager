@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { ListGroup, Button } from 'react-bootstrap';
 import { FaPencilAlt, FaTrash } from 'react-icons/fa';
+import toast, { Toaster } from 'react-hot-toast';
 
 import { setActiveInvoice, deleteItem } from 'actions/invoicesActions';
 
@@ -9,9 +10,15 @@ const InvoicesList = () => {
 	const { items: invoices } = useSelector(state => state.invoices);
 	const dispatch = useDispatch();
 
+	const handleInvoiceDelete = invoice => {
+		dispatch(deleteItem(invoice.id));
+		toast.success(`Deleted Invoice #${invoice.invoiceNumber} successfully!`);
+	};
+
 	return (
 		<div className="container mt-5" style={{ maxWidth: '800px' }}>
 			<h2 className="mb-4">Invoices List</h2>
+			<Toaster />
 
 			<ListGroup>
 				{invoices.map(invoice => (
@@ -37,7 +44,7 @@ const InvoicesList = () => {
 
 							<Button
 								variant="outline-danger"
-								onClick={() => dispatch(deleteItem(invoice.id))}
+								onClick={() => handleInvoiceDelete(invoice)}
 							>
 								<FaTrash />
 							</Button>

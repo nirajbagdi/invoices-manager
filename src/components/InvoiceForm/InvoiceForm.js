@@ -153,7 +153,7 @@ const InvoiceForm = () => {
 		<>
 			<CopyModal
 				show={isCopied}
-				invoiceId={invoices.at(-1).id}
+				invoiceId={invoices.at(-1)?.id}
 				onClose={() => setIsCopied(false)}
 			/>
 
