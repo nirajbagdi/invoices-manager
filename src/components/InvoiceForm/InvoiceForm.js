@@ -155,20 +155,24 @@ const InvoiceForm = () => {
 
 			<Form onSubmit={handleFormSubmit}>
 				<Row>
-					<ProductDetails
-						invoice={invoice}
-						onProductAdd={handleAddProduct}
-						onProductEdit={handleProductEdit}
-						onProductDelete={handleProductDelete}
-					/>
+					{activeTab === invoiceTabs[0] && (
+						<InvoiceDetails
+							invoice={invoice}
+							invoiceSlug={invoiceSlug}
+							onFieldEdit={handleFieldEdit}
+							onInvoiceCopy={handleInvoiceCopy}
+							onCurrencyChange={handleCurrencyChange}
+						/>
+					)}
 
-					{/* <InvoiceDetails
-						invoice={invoice}
-						invoiceSlug={invoiceSlug}
-						onFieldEdit={handleFieldEdit}
-						onInvoiceCopy={handleInvoiceCopy}
-						onCurrencyChange={handleCurrencyChange}
-					/> */}
+					{activeTab === invoiceTabs[1] && (
+						<ProductDetails
+							invoice={invoice}
+							onProductAdd={handleAddProduct}
+							onProductEdit={handleProductEdit}
+							onProductDelete={handleProductDelete}
+						/>
+					)}
 				</Row>
 			</Form>
 		</>

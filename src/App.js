@@ -15,7 +15,7 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => (
-	<div className="App d-flex flex-column align-items-center justify-content-center w-100">
+	<div className="App d-flex flex-column align-items-center w-100">
 		<Container>
 			<InvoiceModal />
 			<RouterProvider router={router} />

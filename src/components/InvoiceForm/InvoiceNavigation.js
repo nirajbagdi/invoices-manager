@@ -6,7 +6,7 @@ import { IoMdArrowRoundBack } from 'react-icons/io';
 export const invoiceTabs = ['Invoice Details', 'Products'];
 
 const InvoiceNavigation = ({ activeTab, onTabChange }) => (
-	<Nav className="d-flex align-items-center" style={{ fontSize: '1rem' }}>
+	<Nav className="d-flex align-items-center mt-4" style={{ fontSize: '1rem' }}>
 		<Nav.Item>
 			<Link to="/">
 				<IoMdArrowRoundBack style={{ fontSize: '1.2rem' }} className="me-3" />
