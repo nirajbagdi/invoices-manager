@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { v4 as uuid } from 'uuid';
-import { Form, Row, Button } from 'react-bootstrap';
-import { BiArrowToLeft } from 'react-icons/bi';
+import { Form, Row } from 'react-bootstrap';
 
+import InvoiceNavigation, { invoiceTabs } from './InvoiceNavigation';
 import InvoiceDetails from './InvoiceDetails';
 import ProductDetails from './ProductDetails';
 import CopyModal from 'components/CopyModal/CopyModal';
@@ -45,6 +45,7 @@ const initialInvoiceState = {
 const InvoiceForm = () => {
 	const [invoice, setInvoice] = useState(initialInvoiceState);
 	const [isCopied, setIsCopied] = useState(false);
+	const [activeTab, setActiveTab] = useState(invoiceTabs[0]);
 
 	const invoices = useSelector(state => state.invoices.items);
 	const dispatch = useDispatch();
@@ -63,6 +64,8 @@ const InvoiceForm = () => {
 	useEffect(() => {
 		handleCalculateTotal();
 	}, []);
+
+	const handleTabChange = currentTab => setActiveTab(currentTab);
 
 	const handleProductDelete = itemID => {
 		setInvoice(invoiceObj => ({
@@ -148,12 +151,7 @@ const InvoiceForm = () => {
 				onClose={() => setIsCopied(false)}
 			/>
 
-			<Link to="/">
-				<Button variant="outline" className="mt-3 mb-2 border-0">
-					<BiArrowToLeft className="me-2" />
-					Back to Invoices
-				</Button>
-			</Link>
+			<InvoiceNavigation activeTab={activeTab} onTabChange={handleTabChange} />
 
 			<Form onSubmit={handleFormSubmit}>
 				<Row>

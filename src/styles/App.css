@@ -88,3 +88,7 @@ hr {
 	-ms-user-select: none;
 	user-select: none;
 }
+
+.link-separator:last-child {
+	display: none;
+}
