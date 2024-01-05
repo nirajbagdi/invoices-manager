@@ -7,6 +7,7 @@ import { Form, Row, Button } from 'react-bootstrap';
 import { BiArrowToLeft } from 'react-icons/bi';
 
 import InvoiceDetails from './InvoiceDetails';
+import ProductDetails from './ProductDetails';
 import CopyModal from 'components/CopyModal/CopyModal';
 
 import { copyItem, setActiveInvoice } from 'actions/invoicesActions';
@@ -63,7 +64,7 @@ const InvoiceForm = () => {
 		handleCalculateTotal();
 	}, []);
 
-	const handleRowDel = itemID => {
+	const handleProductDelete = itemID => {
 		setInvoice(invoiceObj => ({
 			...invoiceObj,
 			items: invoiceObj.items.filter(item => item.id !== itemID),
@@ -72,7 +73,7 @@ const InvoiceForm = () => {
 		handleCalculateTotal();
 	};
 
-	const handleAddEvent = () => {
+	const handleAddProduct = () => {
 		const defaultItem = {
 			...initialItem,
 			id: uuid(),
@@ -101,7 +102,7 @@ const InvoiceForm = () => {
 		});
 	};
 
-	const handleItemizedItemEdit = event => {
+	const handleProductEdit = event => {
 		const currentItem = event.target;
 
 		const updatedItems = invoice.items.map(item => {
@@ -156,13 +157,20 @@ const InvoiceForm = () => {
 
 			<Form onSubmit={handleFormSubmit}>
 				<Row>
-					<InvoiceDetails
+					<ProductDetails
+						invoice={invoice}
+						onProductAdd={handleAddProduct}
+						onProductEdit={handleProductEdit}
+						onProductDelete={handleProductDelete}
+					/>
+
+					{/* <InvoiceDetails
 						invoice={invoice}
 						invoiceSlug={invoiceSlug}
 						onFieldEdit={handleFieldEdit}
 						onInvoiceCopy={handleInvoiceCopy}
 						onCurrencyChange={handleCurrencyChange}
-					/>
+					/> */}
 				</Row>
 			</Form>
 		</>
