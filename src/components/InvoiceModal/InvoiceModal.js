@@ -3,7 +3,7 @@ import { Row, Col, Button, Table, Modal } from 'react-bootstrap';
 import { BiSave, BiCloudDownload } from 'react-icons/bi';
 import toast, { Toaster } from 'react-hot-toast';
 
-import { saveItem, setActiveInvoice } from 'actions/invoicesActions';
+import { saveInvoice, setActiveInvoice } from 'actions/invoicesActions';
 import { generateInvoice } from 'utils';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,7 +15,7 @@ const InvoiceModal = () => {
 	const handleModalHide = () => dispatch(setActiveInvoice(null));
 
 	const handleInvoiceSave = () => {
-		dispatch(saveItem(activeInvoice));
+		dispatch(saveInvoice(activeInvoice));
 		toast.success('Invoice Saved Successfully!');
 		handleModalHide();
 	};

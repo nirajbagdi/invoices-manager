@@ -10,10 +10,10 @@ import InvoiceDetails from './InvoiceDetails';
 import ProductDetails from './ProductDetails';
 import CopyModal from 'components/CopyModal/CopyModal';
 
-import { copyItem, setActiveInvoice } from 'actions/invoicesActions';
+import { copyInvoice, setActiveInvoice } from 'actions/invoicesActions';
 
 const initialItem = {
-	id: uuid(),
+	id: '',
 	name: '',
 	description: '',
 	price: 1,
@@ -47,7 +47,7 @@ const InvoiceForm = () => {
 	const [isCopied, setIsCopied] = useState(false);
 	const [activeTab, setActiveTab] = useState(invoiceTabs[0]);
 
-	const invoices = useSelector(state => state.invoices.items);
+	const { invoices } = useSelector(state => state.invoices);
 	const dispatch = useDispatch();
 
 	const { invoiceSlug } = useParams();
@@ -65,7 +65,9 @@ const InvoiceForm = () => {
 		handleCalculateTotal();
 	}, []);
 
-	const handleTabChange = currentTab => setActiveTab(currentTab);
+	const handleTabChange = currentTab => {
+		setActiveTab(currentTab);
+	};
 
 	const handleProductDelete = itemID => {
 		setInvoice(invoiceObj => ({
@@ -132,7 +134,7 @@ const InvoiceForm = () => {
 	};
 
 	const handleInvoiceCopy = () => {
-		dispatch(copyItem(invoice));
+		dispatch(copyInvoice(invoice));
 		setIsCopied(true);
 	};
 

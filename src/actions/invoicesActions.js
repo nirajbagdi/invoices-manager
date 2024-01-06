@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-export const saveItem = createAction('invoices/saveItem');
-export const deleteItem = createAction('invoices/deleteItem');
-export const copyItem = createAction('invoices/copyItem');
+export const saveInvoice = createAction('invoices/saveInvoice');
+export const deleteInvoice = createAction('invoices/deleteInvoice');
+export const copyInvoice = createAction('invoices/copyInvoice');
 export const setActiveInvoice = createAction('invoices/setActiveInvoice');

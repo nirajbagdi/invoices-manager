@@ -4,14 +4,14 @@ import { ListGroup, Button } from 'react-bootstrap';
 import { FaPencilAlt, FaTrash } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
 
-import { setActiveInvoice, deleteItem } from 'actions/invoicesActions';
+import { setActiveInvoice, deleteInvoice } from 'actions/invoicesActions';
 
 const InvoicesList = () => {
-	const { items: invoices } = useSelector(state => state.invoices);
+	const { invoices } = useSelector(state => state.invoices);
 	const dispatch = useDispatch();
 
 	const handleInvoiceDelete = invoice => {
-		dispatch(deleteItem(invoice.id));
+		dispatch(deleteInvoice(invoice.id));
 		toast.success(`Deleted Invoice #${invoice.invoiceNumber} successfully!`);
 	};
 
