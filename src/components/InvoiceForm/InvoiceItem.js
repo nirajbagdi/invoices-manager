@@ -23,18 +23,20 @@ const InvoiceItem = props => {
 
 	return (
 		<div>
-			<Table>
-				<thead>
-					<tr>
-						<th>ITEM</th>
-						<th>QTY</th>
-						<th>PRICE/RATE</th>
-						<th className="text-center">ACTION</th>
-					</tr>
-				</thead>
+			{props.items.length !== 0 && (
+				<Table>
+					<thead>
+						<tr>
+							<th>ITEM</th>
+							<th>QTY</th>
+							<th>PRICE/RATE</th>
+							<th className="text-center">ACTION</th>
+						</tr>
+					</thead>
 
-				<tbody>{itemTableJSX}</tbody>
-			</Table>
+					<tbody>{itemTableJSX}</tbody>
+				</Table>
+			)}
 
 			{!props.onlyForm && (
 				<Button className="fw-bold" onClick={props.onRowAdd}>
