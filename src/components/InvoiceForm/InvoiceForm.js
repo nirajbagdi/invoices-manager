@@ -50,7 +50,7 @@ const InvoiceForm = () => {
 	const [isCopied, setIsCopied] = useState(false);
 	const [activeTab, setActiveTab] = useState(invoiceTabs[0]);
 
-	const { invoices, products } = useSelector(state => state.invoices);
+	const { invoices, products, groups } = useSelector(state => state.invoices);
 	const dispatch = useDispatch();
 
 	const { invoiceSlug } = useParams();
@@ -173,6 +173,7 @@ const InvoiceForm = () => {
 					{activeTab === invoiceTabs[1] && (
 						<ProductDetails
 							invoice={invoice}
+							invoiceGroups={groups}
 							onProductAdd={handleAddProduct}
 							onProductEdit={handleProductEdit}
 							onProductDelete={handleProductDelete}
