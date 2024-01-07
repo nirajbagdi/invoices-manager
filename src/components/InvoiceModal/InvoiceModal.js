@@ -15,10 +15,6 @@ const InvoiceModal = () => {
 	const { activeInvoice, products } = useSelector(state => state.invoices);
 	const dispatch = useDispatch();
 
-	useEffect(() => {
-		console.log(products);
-	}, [products]);
-
 	const handleModalHide = () => dispatch(setActiveInvoice(null));
 
 	const handleInvoiceSave = () => {
