@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
-import { Col, Card, Accordion, Button } from 'react-bootstrap';
-import { v4 as uuid } from 'uuid';
+import { Col, Card, Accordion } from 'react-bootstrap';
 
 import InvoiceItem from './InvoiceItem';
 
