@@ -2,30 +2,44 @@
 	"products": [
 		{
 			"id": "product-1",
-			"name": "Books",
-			"description": "Harry Potter (Premium Collection)",
-			"price": 38.5,
+			"name": "Laptop",
+			"description": "High-performance laptop with SSD",
+			"price": 1200.0,
 			"group": "Electronics"
 		},
 		{
 			"id": "product-2",
-			"name": "Video Games",
-			"description": "GTA V + RDR2",
-			"price": 120,
-			"group": "Furniture"
+			"name": "Printer",
+			"description": "Color inkjet printer",
+			"price": 200.0,
+			"group": "Office Supplies"
 		},
 		{
 			"id": "product-3",
-			"name": "College",
-			"description": "Total University Fees + Tution",
-			"price": 500,
-			"group": "Electronics"
+			"name": "Desk Chair",
+			"description": "Ergonomic office chair",
+			"price": 150.0,
+			"group": "Furniture"
 		},
 		{
 			"id": "product-4",
-			"name": "Skateboard",
-			"description": "Twin Tip Longboard Skateboard",
-			"price": 85,
+			"name": "Desk Lamp",
+			"description": "LED desk lamp with adjustable brightness",
+			"price": 50.0,
+			"group": "Lighting"
+		},
+		{
+			"id": "product-5",
+			"name": "Smartphone",
+			"description": "Latest model with advanced features",
+			"price": 800.0,
+			"group": "Electronics"
+		},
+		{
+			"id": "product-6",
+			"name": "Coffee Table",
+			"description": "Modern coffee table with storage",
+			"price": 200.0,
 			"group": "Furniture"
 		}
 	]

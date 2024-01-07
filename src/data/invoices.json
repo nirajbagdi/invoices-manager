@@ -4,72 +4,138 @@
 			"id": "invoice-1",
 			"items": [
 				{
-					"id": "invoiceItem1_1",
+					"id": "item-1",
 					"productId": "product-1",
-					"quantity": 5
+					"quantity": 2
 				},
 				{
-					"id": "invoiceItem2_1",
+					"id": "item-2",
 					"productId": "product-2",
-					"quantity": 2
+					"quantity": 3
 				}
 			],
 			"isOpen": false,
 			"currency": "$",
-			"currentDate": "",
-			"invoiceNumber": 146,
-			"dateOfIssue": "2024-02-23",
+			"currentDate": "2024-08-15",
+			"invoiceNumber": 132,
+			"dateOfIssue": "2024-08-16",
 			"billTo": "John Doe",
 			"billToEmail": "john.doe@example.com",
-			"billToAddress": "New York, USA",
-			"billFrom": "Billy Singh",
-			"billFromEmail": "billy.singh@example.com",
-			"billFromAddress": "Brampton, CA",
-			"notes": "Probably just a reminder for myself to shop less :)",
-			"total": 480.29125,
-			"subTotal": 432.5,
-			"taxRate": 23.89,
-			"taxAmount": 103.32425,
-			"discountRate": 12.84,
-			"discountAmount": 55.532999999999994
+			"billToAddress": "123 Main St, Cityville, USA",
+			"billFrom": "Your Company",
+			"billFromEmail": "info@yourcompany.com",
+			"billFromAddress": "456 Business Rd, Business City, USA",
+			"notes": "Thank you for your business!",
+			"total": 750.99,
+			"subTotal": 700.0,
+			"taxRate": 7.14,
+			"taxAmount": 50.99,
+			"discountRate": 10.0,
+			"discountAmount": 70.0
 		},
 		{
 			"id": "invoice-2",
 			"items": [
 				{
-					"id": "invoiceItem2_1",
+					"id": "item-3",
 					"productId": "product-3",
 					"quantity": 1
 				},
 				{
-					"id": "invoiceItem2_2",
+					"id": "item-4",
 					"productId": "product-4",
-					"quantity": 2
-				},
-				{
-					"id": "invoiceItem2_3",
-					"productId": "product-2",
 					"quantity": 2
 				}
 			],
 			"isOpen": false,
 			"currency": "$",
-			"currentDate": "",
-			"invoiceNumber": 240,
-			"dateOfIssue": "2024-05-15",
-			"billTo": "Michael Dave",
-			"billToEmail": "michael.dave@example.com",
-			"billToAddress": "Phiplipines",
-			"billFrom": "Trevor Phiplis",
-			"billFromEmail": "trevor.philips@example.com",
-			"billFromAddress": "Atlanta, GA",
-			"notes": "Any Bullshit :)",
-			"total": 652.379,
-			"subTotal": 670.0,
-			"taxRate": 15.67,
-			"taxAmount": 104.99,
-			"discountRate": 18.32,
-			"discountAmount": 122.74
+			"currentDate": "2024-08-15",
+			"invoiceNumber": 145,
+			"dateOfIssue": "2024-08-17",
+			"billTo": "Jane Smith",
+			"billToEmail": "jane.smith@example.com",
+			"billToAddress": "789 Oak St, Townsville, USA",
+			"billFrom": "Your Company",
+			"billFromEmail": "info@yourcompany.com",
+			"billFromAddress": "456 Business Rd, Business City, USA",
+			"notes": "Payment due in 30 days.",
+			"total": 430.5,
+			"subTotal": 400.0,
+			"taxRate": 7.625,
+			"taxAmount": 30.5,
+			"discountRate": 0,
+			"discountAmount": 0
+		},
+		{
+			"id": "invoice-3",
+			"items": [
+				{
+					"id": "item-5",
+					"productId": "product-1",
+					"quantity": 2
+				},
+				{
+					"id": "item-6",
+					"productId": "product-5",
+					"quantity": 1
+				}
+			],
+			"isOpen": false,
+			"currency": "$",
+			"currentDate": "2024-08-18",
+			"invoiceNumber": 78,
+			"dateOfIssue": "2024-08-19",
+			"billTo": "Alice Johnson",
+			"billToEmail": "alice.johnson@example.com",
+			"billToAddress": "456 Pine St, Greenvale, USA",
+			"billFrom": "Your Company",
+			"billFromEmail": "info@yourcompany.com",
+			"billFromAddress": "456 Business Rd, Business City, USA",
+			"notes": "Please review the attached invoice.",
+			"total": 850.0,
+			"subTotal": 800.0,
+			"taxRate": 6.25,
+			"taxAmount": 50.0,
+			"discountRate": 0,
+			"discountAmount": 0
+		},
+		{
+			"id": "invoice-4",
+			"items": [
+				{
+					"id": "item-7",
+					"productId": "product-2",
+					"quantity": 1
+				},
+				{
+					"id": "item-8",
+					"productId": "product-3",
+					"quantity": 2
+				},
+				{
+					"id": "item-9",
+					"productId": "product-6",
+					"quantity": 1
+				}
+			],
+			"isOpen": false,
+			"currency": "$",
+			"currentDate": "2024-08-20",
+			"invoiceNumber": 89,
+			"dateOfIssue": "2024-08-21",
+			"billTo": "Robert Davis",
+			"billToEmail": "robert.davis@example.com",
+			"billToAddress": "789 Maple St, Hillside, USA",
+			"billFrom": "Your Company",
+			"billFromEmail": "info@yourcompany.com",
+			"billFromAddress": "456 Business Rd, Business City, USA",
+			"notes": "Thank you for choosing our services.",
+			"total": 400.0,
+			"subTotal": 400.0,
+			"taxRate": 0,
+			"taxAmount": 0,
+			"discountRate": 0,
+			"discountAmount": 0
 		}
 	]
 }
