@@ -1,17 +1,17 @@
 {
 	"invoices": [
 		{
-			"id": "834o892325",
+			"id": "invoice-1",
 			"items": [
 				{
-					"id": "522ad046-b34c-4e67-b379-017530323f44",
+					"id": "product-1",
 					"name": "Books",
 					"description": "Harry Potter (Premium Collection)",
 					"price": 38.5,
 					"quantity": 5
 				},
 				{
-					"id": "7c7f5f12-e57d-46b1-bd23-6d52144b8b1e",
+					"id": "product-2",
 					"name": "Video Games",
 					"description": "GTA V + RDR2",
 					"price": 120,
@@ -38,17 +38,17 @@
 			"discountAmount": 55.532999999999994
 		},
 		{
-			"id": "8492332njd9f8",
+			"id": "invoice-2",
 			"items": [
 				{
-					"id": "932uwridkj23h98r",
+					"id": "product-3",
 					"name": "College",
 					"description": "Total University Fees + Tution",
 					"price": 500,
 					"quantity": 1
 				},
 				{
-					"id": "38on2uo29",
+					"id": "product-4",
 					"name": "Skateboard",
 					"description": "Twin Tip Londboard Skateboard",
 					"price": 85,
