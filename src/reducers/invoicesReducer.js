@@ -15,7 +15,7 @@ import DUMMY_PRODUCTS from 'data/products.json';
 const initialState = {
 	invoices: DUMMY_INVOICES.invoices,
 	products: DUMMY_PRODUCTS.products,
-	groups: ['Electronics', 'Furniture'],
+	groups: [...new Set(DUMMY_PRODUCTS.products.map(item => item.group))],
 	activeInvoice: null,
 };
 
