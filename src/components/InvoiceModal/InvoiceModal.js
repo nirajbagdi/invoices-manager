@@ -9,7 +9,6 @@ import { getInvoiceWithProductDetails } from 'selectors/invoiceSelectors';
 import { generateInvoice } from 'utils';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect } from 'react';
 
 const InvoiceModal = () => {
 	const { activeInvoice, products } = useSelector(state => state.invoices);
