@@ -11,13 +11,15 @@ import ProductDetails from './ProductDetails';
 import CopyModal from 'components/CopyModal/CopyModal';
 
 import { copyInvoice, setActiveInvoice } from 'actions/invoicesActions';
+import { getInvoiceWithProductDetails } from 'selectors/invoiceSelectors';
 
 const initialItem = {
+	productId: '',
 	id: '',
 	name: '',
 	description: '',
-	price: 1,
 	quantity: 1,
+	price: 1,
 };
 
 const initialInvoiceState = {
@@ -47,7 +49,7 @@ const InvoiceForm = () => {
 	const [isCopied, setIsCopied] = useState(false);
 	const [activeTab, setActiveTab] = useState(invoiceTabs[0]);
 
-	const { invoices } = useSelector(state => state.invoices);
+	const { invoices, products } = useSelector(state => state.invoices);
 	const dispatch = useDispatch();
 
 	const { invoiceSlug } = useParams();
@@ -57,9 +59,9 @@ const InvoiceForm = () => {
 
 		if (invoiceSlug || invoices.some(existsInvoice)) {
 			const currentInvoice = invoices.find(existsInvoice);
-			setInvoice(currentInvoice);
+			setInvoice(getInvoiceWithProductDetails(currentInvoice, products));
 		}
-	}, [invoiceSlug, invoices]);
+	}, [invoiceSlug, invoices, products]);
 
 	useEffect(() => {
 		handleCalculateTotal();

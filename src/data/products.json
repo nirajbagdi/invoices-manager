@@ -1,0 +1,28 @@
+{
+	"products": [
+		{
+			"id": "product-1",
+			"name": "Books",
+			"description": "Harry Potter (Premium Collection)",
+			"price": 38.5
+		},
+		{
+			"id": "product-2",
+			"name": "Video Games",
+			"description": "GTA V + RDR2",
+			"price": 120
+		},
+		{
+			"id": "product-3",
+			"name": "College",
+			"description": "Total University Fees + Tution",
+			"price": 500
+		},
+		{
+			"id": "product-4",
+			"name": "Skateboard",
+			"description": "Twin Tip Longboard Skateboard",
+			"price": 85
+		}
+	]
+}

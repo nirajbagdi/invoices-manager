@@ -1,11 +1,20 @@
 import { v4 as uuid } from 'uuid';
 import { createReducer } from '@reduxjs/toolkit';
 
-import { saveInvoice, deleteInvoice, copyInvoice, setActiveInvoice } from 'actions/invoicesActions';
+import {
+	saveInvoice,
+	deleteInvoice,
+	copyInvoice,
+	updateProductInInvoices,
+	setActiveInvoice,
+} from 'actions/invoicesActions';
+
 import DUMMY_INVOICES from 'data/invoices.json';
+import DUMMY_PRODUCTS from 'data/products.json';
 
 const initialState = {
 	invoices: DUMMY_INVOICES.invoices,
+	products: DUMMY_PRODUCTS.products,
 	activeInvoice: null,
 };
 
@@ -37,6 +46,30 @@ const invoicesReducer = createReducer(initialState, builder => {
 
 		.addCase(setActiveInvoice, (state, action) => {
 			state.activeInvoice = action.payload;
+		})
+
+		.addCase(updateProductInInvoices, (state, action) => {
+			const { productId, updatedItem } = action.payload;
+
+			const productIdx = state.products.findIndex(product => product.id === productId);
+
+			if (productIdx !== -1) {
+				state.products[productIdx] = {
+					...state.products[productIdx],
+					...updatedItem,
+				};
+			}
+
+			state.invoices.forEach(invoice => {
+				const itemIdx = invoice.items.findIndex(item => item.productId === productId);
+
+				if (itemIdx !== -1) {
+					invoice.items[itemIdx] = {
+						...invoice.items[itemIdx],
+						...updatedItem,
+					};
+				}
+			});
 		});
 });
 

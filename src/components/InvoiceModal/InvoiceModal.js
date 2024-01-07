@@ -3,19 +3,35 @@ import { Row, Col, Button, Table, Modal } from 'react-bootstrap';
 import { BiSave, BiCloudDownload } from 'react-icons/bi';
 import toast, { Toaster } from 'react-hot-toast';
 
-import { saveInvoice, setActiveInvoice } from 'actions/invoicesActions';
+import { saveInvoice, setActiveInvoice, updateProductInInvoices } from 'actions/invoicesActions';
+import { getInvoiceWithProductDetails } from 'selectors/invoiceSelectors';
 import { generateInvoice } from 'utils';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const InvoiceModal = () => {
-	const { activeInvoice } = useSelector(state => state.invoices);
+	const { activeInvoice, products } = useSelector(state => state.invoices);
 	const dispatch = useDispatch();
 
 	const handleModalHide = () => dispatch(setActiveInvoice(null));
 
 	const handleInvoiceSave = () => {
 		dispatch(saveInvoice(activeInvoice));
+
+		activeInvoice.items.forEach(item =>
+			dispatch(
+				updateProductInInvoices({
+					productId: item.productId,
+					updatedItem: {
+						name: item.name,
+						description: item.description,
+						quantity: item.quantity,
+						price: item.price,
+					},
+				})
+			)
+		);
+
 		toast.success('Invoice Saved Successfully!');
 		handleModalHide();
 	};
@@ -98,7 +114,10 @@ const InvoiceModal = () => {
 									</thead>
 
 									<tbody>
-										{activeInvoice.items.map((item, i) => (
+										{getInvoiceWithProductDetails(
+											activeInvoice,
+											products
+										).items.map((item, i) => (
 											<tr id={i} key={i}>
 												<td style={{ width: '70px' }}>{item.quantity}</td>
 
