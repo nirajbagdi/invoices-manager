@@ -1,11 +1,6 @@
 # Invoice Management System
 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![React Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
-
-This project is a simple invoice management system developed using **React** and **Redux**. It allows users to create, view, edit, and delete invoices through a user-friendly interface. The application emphasizes clean code, efficient state management, and a responsive design for a seamless user experience.
+The Invoice Management App is a React and Redux-based web application that streamlines invoice creation, viewing, and management. It introduces a user-friendly Products tab, dynamic product information updates, and allows grouping products for better organization during invoice creation.
 
 ## Live Demo
 
@@ -14,9 +9,10 @@ A live demo of the application is hosted at [https://invoices-manager-v2.netlify
 ## Features
 
 -   Create, view, edit, and delete invoices
--   Display a list of invoices for quick access
 -   Duplicate existing invoices for easy creation
--   Efficient state management with Redux.
+-   Manage associated products in a dedicated tab.
+-   Real-time reflection of product changes in all used invoices.
+-   Organize products by purpose for streamlined workflow.
 
 ## Built With
 
@@ -33,23 +29,13 @@ To get started with the project, follow these steps:
 
     ```sh
     git clone https://github.com/nirajbagdi/invoices-manager.git
-    ```
-
-2.  Navigate to the project directory:
-
-    ```sh
     cd invoices-manager
     ```
 
-3.  Install the dependencies:
+2.  Install & Run the application:
 
     ```sh
     npm install
-    ```
-
-4.  Run the application:
-
-    ```sh
     npm start
     ```
 
