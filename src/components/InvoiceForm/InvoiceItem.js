@@ -32,9 +32,11 @@ const InvoiceItem = props => {
 				<tbody>{itemTableJSX}</tbody>
 			</Table>
 
-			<Button className="fw-bold" onClick={props.onRowAdd}>
-				Add Item
-			</Button>
+			{!props.onlyForm && (
+				<Button className="fw-bold" onClick={props.onRowAdd}>
+					Add Item
+				</Button>
+			)}
 		</div>
 	);
 };
