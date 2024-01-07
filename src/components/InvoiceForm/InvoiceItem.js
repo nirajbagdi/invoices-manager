@@ -1,8 +1,10 @@
 import { Table, Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import { BiTrash } from 'react-icons/bi';
+
 import EditableField from './EditableField';
+import ItemGroupSelect from './ItemGroupSelect';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const InvoiceItem = props => {
 	const itemTableJSX = props.items.map(item => (
@@ -75,6 +77,8 @@ const ItemRow = props => (
 					id: props.item.id,
 				}}
 			/>
+
+			<ItemGroupSelect item={props.item} onItemizedItemEdit={props.onItemizedItemEdit} />
 		</td>
 
 		<td style={{ minWidth: '130px' }}>

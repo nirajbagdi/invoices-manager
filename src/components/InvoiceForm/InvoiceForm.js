@@ -20,6 +20,7 @@ const initialItem = {
 	description: '',
 	quantity: 1,
 	price: 1,
+	group: '',
 };
 
 const initialInvoiceState = {
