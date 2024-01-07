@@ -58,6 +58,11 @@ const invoicesReducer = createReducer(initialState, builder => {
 					...state.products[productIdx],
 					...updatedItem,
 				};
+			} else {
+				state.products.push({
+					id: productId,
+					...updatedItem,
+				});
 			}
 
 			state.invoices.forEach(invoice => {
@@ -68,6 +73,15 @@ const invoicesReducer = createReducer(initialState, builder => {
 						...invoice.items[itemIdx],
 						...updatedItem,
 					};
+				} else {
+					const productNames = state.products.map(product => product.name);
+					const parsedItems = JSON.parse(JSON.stringify(invoice.items));
+
+					invoice.items = parsedItems.map(item =>
+						productNames.includes(item.name) && item.productId.trim() === ''
+							? { ...item, productId }
+							: item
+					);
 				}
 			});
 		});

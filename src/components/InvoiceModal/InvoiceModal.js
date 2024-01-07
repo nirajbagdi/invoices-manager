@@ -1,3 +1,4 @@
+import { v4 as uuid } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, Button, Table, Modal } from 'react-bootstrap';
 import { BiSave, BiCloudDownload } from 'react-icons/bi';
@@ -8,10 +9,15 @@ import { getInvoiceWithProductDetails } from 'selectors/invoiceSelectors';
 import { generateInvoice } from 'utils';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect } from 'react';
 
 const InvoiceModal = () => {
 	const { activeInvoice, products } = useSelector(state => state.invoices);
 	const dispatch = useDispatch();
+
+	useEffect(() => {
+		console.log(products);
+	}, [products]);
 
 	const handleModalHide = () => dispatch(setActiveInvoice(null));
 
@@ -21,7 +27,7 @@ const InvoiceModal = () => {
 		activeInvoice.items.forEach(item =>
 			dispatch(
 				updateProductInInvoices({
-					productId: item.productId,
+					productId: item.productId || uuid(),
 					updatedItem: {
 						name: item.name,
 						description: item.description,
