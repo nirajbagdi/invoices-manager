@@ -20,6 +20,9 @@ const ProductDetails = ({
 									onlyForm
 									items={invoice.items.filter(item => item.group === group)}
 									currency={invoice.currency.split('_')[0]}
+									fallbackWhen={
+										!invoice.items.filter(item => item.group === group).length
+									}
 									onRowAdd={onProductAdd}
 									onRowDel={onProductDelete}
 									onItemizedItemEdit={onProductEdit}

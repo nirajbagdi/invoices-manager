@@ -17,6 +17,10 @@ const InvoiceItem = props => {
 		/>
 	));
 
+	if (props.fallbackWhen) {
+		return <div className="text-center">No Items Found!</div>;
+	}
+
 	return (
 		<div>
 			<Table>
