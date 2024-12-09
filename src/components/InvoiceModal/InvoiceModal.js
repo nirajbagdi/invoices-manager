@@ -26,7 +26,6 @@ const InvoiceModal = () => {
 					updatedItem: {
 						name: item.name,
 						description: item.description,
-						quantity: item.quantity,
 						price: item.price,
 						group: item.group,
 					},
