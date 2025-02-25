@@ -25,6 +25,14 @@ This project is an **enhanced version** of an existing [Invoice Generator](https
   - If a product's name or description is updated, it reflects across all invoices using that product.
   - Changing a product’s quantity only affects that specific invoice, not others.
 
+## Screenshots
+
+![Screenshot 2025-02-25 180501](https://github.com/user-attachments/assets/ff03462c-06d6-4b9a-a98d-b986145c9068)
+![Screenshot 2025-02-25 180630](https://github.com/user-attachments/assets/5f123a3d-3011-464f-b756-a2fd7648898c)
+![Screenshot 2025-02-25 180706](https://github.com/user-attachments/assets/b9885577-3431-4f86-ba67-a88faeb8e674)
+![Screenshot 2025-02-25 180731](https://github.com/user-attachments/assets/bc26a066-0e34-4f30-8470-0a7b5fe09967)
+
+
 ## Tech Stack
 - **React** – Component-based UI.
 - **Redux** – Centralized state management.
